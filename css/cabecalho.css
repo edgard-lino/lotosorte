@@ -1,0 +1,24 @@
+.cabecalho {
+  text-align: center;
+}
+
+.cabecalho__imagem {
+  padding: 1rem;
+  width: 14rem;
+}
+
+.cabecalho__titulo {
+  color: var(--verde);
+  font-family: var(--fonte-principal);
+  font-size: 3.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cabecalho__subtitulo {
+  color: var(--azul);
+  font-family: var(--fonte-principal);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}

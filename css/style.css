@@ -1,0 +1,34 @@
+@import url(cabecalho.css);
+@import url(principal.css);
+@import url(meus-jogos.css);
+@import url(rodape.css);
+
+:root {
+  --azul: #3A4396;
+  --branco: white;
+  --cinza: #cccccc;
+  --marrom: #84716B;
+  --magenta: #EC268F;
+  --rosa: #F79E6F;
+  --verde: #21B791;
+  --vermelho: #B43441;
+  --preto-sombra: rgba(0, 0, 0, 0.467);
+
+  --fonte-principal: 'Geologica', sans-serif;
+}
+
+body {
+  background-image: url(../img/fundo.jpg);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  background-color: var(--branco);
+  margin: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.467);
+  min-height: 300px; /* deletar depois */
+  
+}

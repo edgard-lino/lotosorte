@@ -1,0 +1,96 @@
+.principal {
+
+}
+
+.gerador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.gerador__numeros ul {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 280px;
+}
+
+.numero__01 {
+  border: 10px solid var(--marrom);
+}
+
+.numero__02 {
+  border: 10px solid var(--magenta);
+}
+
+.numero__03 {
+  border: 10px solid var(--rosa);
+}
+
+.numero__04 {
+  border: 10px solid var(--azul);
+}
+
+.numero__05 {
+  border: 10px solid var(--verde);
+}
+
+.numero__06 {
+  border: 10px solid var(--vermelho);
+}
+
+.numero {
+  background-color: var(--branco);
+  border-radius: 3rem;
+  box-shadow: 5px 5px 5px var(--preto-sombra);
+  width: 2.9rem;
+  height: 2.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--fonte-principal);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--preto);
+}
+
+.botao__selecionar {
+  font-family: var(--fonte-principal);
+  font-weight: 500;
+  width: 200px;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  border-radius: 4rem;
+  color: var(--azul);
+  border: 2px solid var(--azul);
+}
+
+.botao__gerar-numeros {
+  font-family: var(--fonte-principal);
+  font-weight: 500;
+  width: 200px;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  border-radius: 4rem;
+  color: var(--branco);
+  background-color: var(--verde);
+  border: 2px solid var(--verde);
+}
+
+.botao__salvar-jogo {
+  font-family: var(--fonte-principal);
+  font-weight: 500;
+  width: 200px;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  border-radius: 4rem;
+  color: var(--vermelho);
+  background-color: var(--branco);
+  border: 2px solid var(--vermelho);
+}
+
