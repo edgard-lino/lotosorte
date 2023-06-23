@@ -6,7 +6,7 @@
 :root {
   --azul: #3A4396;
   --branco: white;
-  --cinza: #cccccc;
+  --cinza: #ffe7da;
   --marrom: #84716B;
   --magenta: #EC268F;
   --rosa: #F79E6F;
@@ -17,18 +17,17 @@
   --fonte-principal: 'Geologica', sans-serif;
 }
 
-body {
+.fundo {
   background-image: url(../img/fundo.jpg);
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .container {
   background-color: var(--branco);
-  margin: 0.5rem;
-  border-radius: 10px;
+  margin: auto;
+  width: 90%;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.467);
-  min-height: 300px; /* deletar depois */
-  
 }

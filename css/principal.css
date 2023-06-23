@@ -21,35 +21,35 @@
 }
 
 .numero__01 {
-  border: 10px solid var(--marrom);
+  border: 17px solid var(--marrom);
 }
 
 .numero__02 {
-  border: 10px solid var(--magenta);
+  border: 17px solid var(--magenta);
 }
 
 .numero__03 {
-  border: 10px solid var(--rosa);
+  border: 17px solid var(--rosa);
 }
 
 .numero__04 {
-  border: 10px solid var(--azul);
+  border: 17px solid var(--azul);
 }
 
 .numero__05 {
-  border: 10px solid var(--verde);
+  border: 17px solid var(--verde);
 }
 
 .numero__06 {
-  border: 10px solid var(--vermelho);
+  border: 17px solid var(--vermelho);
 }
 
 .numero {
   background-color: var(--branco);
   border-radius: 3rem;
   box-shadow: 5px 5px 5px var(--preto-sombra);
-  width: 2.9rem;
-  height: 2.9rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
