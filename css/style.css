@@ -17,11 +17,11 @@
   --fonte-principal: 'Geologica', sans-serif;
 }
 
-.fundo {
+/* .fundo {
   background-image: url(../img/fundo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   background-position: center;
 }
 
@@ -30,4 +30,4 @@
   margin: auto;
   width: 90%;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.467);
-}
+} */
