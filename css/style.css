@@ -17,8 +17,25 @@
   --fonte-principal: 'Geologica', sans-serif;
 }
 
+@media screen and (min-width: 1200px) {
+  .container {
+    background-image: url(../img/fundo.jpg);
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .principal {
+    background-color: #3A4396;
+    max-width: 1200px;
+    margin: auto;
+    top: 5rem;
+  }
+}
+
+
+
 /* .fundo {
-  background-image: url(../img/fundo.jpg);
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

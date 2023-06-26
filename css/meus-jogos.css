@@ -17,28 +17,11 @@
   color: var(--verde);
 }
 
-.cancela-jogo {
-  background-image: url(../img/cancela-jogo.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: 1.5rem;
-  height: 1.5rem;
-}
 
-
-
-.meus-jogos__lista li {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem 0;
-  align-items: center;
-}
-
-.meus-jogos__numeros {
-  font-family: var(--fonte-principal);
-  font-weight: 500;
-  font-size: 1.3rem;
-  color: var(--preto);
-}
+/* 
+@media screen and (min-width: 720px) {
+  .meus-jogos {
+    width: 700px;
+    margin: auto;
+  }
+} */

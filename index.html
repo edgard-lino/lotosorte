@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +11,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div class="fundo">
+  
     <div class="container">
-      <header class="cabecalho">
-        <img src="img/sorteio.png" alt="Imagem do globo de sorteio de numeros de loteria" class="cabecalho__imagem">
-        <h1 class="cabecalho__titulo">LotoSorte</h1>
-        <h2 class="cabecalho__subtitulo">Gerador de números da Loteria</h2>
-      </header>
+      
       <main class="principal">
-        <section class="gerador">
-          <select name="" id="" class="botao__selecionar">
+        <div class="principal__container">
+          <img src="img/sorteio.png" alt="Imagem do globo de sorteio de numeros de loteria" class="cabecalho__imagem">
+          <div class="cabecalho__titulo__container">
+            <h1 class="cabecalho__titulo">LotoSorte</h1>
+            <h2 class="cabecalho__subtitulo">Gerador de números da Loteria</h2>
+          </div>
+          <select name="" id="" class="botao__selecionar botao">
             <option value="mega-sena">Mega-Sena</option>
             <option value="lotofacil">Lotofácil</option>
             <option value="quina">Quina</option>
             <option value="lotomania">Lotomania</option>
             <option value="dupla-sena">Dupla Sena</option>
           </select>
-          <button class="botao__gerar-numeros">Gerar números</button>
+          <button class="botao__gerar-numeros botao">Gerar números</button>
           <div class="gerador__numeros">
             <ul>
               <li class="numero__01 numero">01</li>
@@ -38,27 +41,27 @@
               <li class="numero__06 numero">06</li>
             </ul>
           </div>
-          
-          <button class="botao__salvar-jogo">Salvar jogo</button>
-        </section>
-        <section class="meus-jogos">
-          <h3 class="meus-jogos__titulo">Meus jogos</h3>
-          <ul class="meus-jogos__lista">
-            <li><div class="cancela-jogo"></div><p class="meus-jogos__numeros">01 02 03 04 05</p></li>
-          </ul>
-        </section>
-        <footer class="rodape">
-          <a href="#" class="rodape__credito">Desenvolvido por Edgard.</a>
-          <div class="rodape__imagens">
+
+          <button class="botao__salvar-jogo botao">Salvar jogo</button>
+          <div class="gerador__imagens">
             <img src="img/homem.png" alt="Homem comemorando">
             <img src="img/mulher.png" alt="Mulher comemorando">
           </div>
-        </footer>
+          <div class="meus-jogos">
+            <h3 class="meus-jogos__titulo">Meus jogos</h3>
+            <ul class="meus-jogos__lista">
+              <li>
+                <div class="cancela-jogo"></div>
+                <p class="meus-jogos__numeros">01 02 03 04 05</p>
+              </li>
+            </ul>
+          </div>
+          <a href="#" class="rodape__credito">Desenvolvido por Edgard.</a>
 
+        </div>
       </main>
     </div>
 
-  </div>
-  
 </body>
+
 </html>
