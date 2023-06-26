@@ -17,18 +17,21 @@
   --fonte-principal: 'Geologica', sans-serif;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .container {
     background-image: url(../img/fundo.jpg);
     background-size: cover;
     height: 100vh;
+    padding-top: 5rem;
   }
   
   .principal {
-    background-color: #3A4396;
-    max-width: 1200px;
+    background-color: var(--branco);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px var(--preto-sombra);
+    max-width: 1250px;
+    padding-top: 2rem;
     margin: auto;
-    top: 5rem;
   }
 }
 
