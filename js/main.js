@@ -3,6 +3,7 @@ const botaoSalvarJogo = document.getElementById('salvar-jogo');
 const numero = document.getElementsByClassName('numero');
 const botaoDeletaJogo = document.querySelector('.deleta-jogo');
 const meusJogosLista = document.querySelector('.meus-jogos__numeros');
+const jogosSalvos = [];
 
 botaoGerarNumeros.addEventListener('click', gerarNumeros);
 botaoSalvarJogo.addEventListener('click', salvarJogo);
@@ -30,7 +31,7 @@ function gerarNumeros() {
     if(a < b) return -1;
     return 0;
   });
-  console.log(novoJogoOrdenado);
+  
 
   for(let i = 0; i < 6; i++) {
     numero[i].innerHTML = novoJogoOrdenado[i];
@@ -38,13 +39,23 @@ function gerarNumeros() {
 }
 
 function salvarJogo() {
-  meusJogosLista.innerHTML = "";
-      for(let i = 0; i < 6; i++) {
-      meusJogosLista.innerHTML += `${novoJogoOrdenado[i]} `;
-    }
-
+  if(!jogosSalvos.includes(novoJogoOrdenado)) {
+    jogosSalvos.push(novoJogoOrdenado);
+  } else {
+    console.log("gere um novo jogo para salvar")
+  }
+  mostraJogosSalvos();
+  
 }
 
 function deletaJogo() {
-  window.alert("Botão funcionando!");
+  jogosSalvos.splice(jogosSalvos.indexOf(0), 1);
+  mostraJogosSalvos();
+}
+
+function mostraJogosSalvos() {
+  meusJogosLista.innerHTML = "";
+  for(let i = 0; i < jogosSalvos.length; i++) {
+    meusJogosLista.innerHTML += `${jogosSalvos[i]} <br>`;
+  }
 }
