@@ -1,61 +1,97 @@
-const botaoGerarNumeros = document.getElementById('gerar-numeros');
+const botaoCriaNovoJogo = document.getElementById('cria-novo-jogo');
 const botaoSalvarJogo = document.getElementById('salvar-jogo');
+const meusJogosLista = document.querySelector('.meus-jogos__lista');
 const numero = document.getElementsByClassName('numero');
-const botaoDeletaJogo = document.querySelector('.deleta-jogo');
-const meusJogosLista = document.querySelector('.meus-jogos__numeros');
-const jogosSalvos = [];
-
-botaoGerarNumeros.addEventListener('click', gerarNumeros);
-botaoSalvarJogo.addEventListener('click', salvarJogo);
-botaoDeletaJogo.addEventListener('click', deletaJogo);
-
 let novoJogo;
 let novoJogoOrdenado;
+const jogosSalvos = [];
 
+botaoCriaNovoJogo.addEventListener('click', criaNovoJogo);
+botaoSalvarJogo.addEventListener('click', salvarJogo);
 
-function gerarNumeros() {
+function criaNovoJogo() {
   novoJogo = [];
-  
+  sorteiaNumeros();
+  ordenaJogo();
+  mostraJogoNaTela();
+}
 
+function sorteiaNumeros() {
   for(let i = 0; i < 6; i++) {
-    let numeroAleatorio = Math.floor(Math.random()*60 + 1);
+        let numeroAleatorio = Math.floor(Math.random()*60 + 1);
+    
+        if(novoJogo.indexOf(numeroAleatorio) == -1) {
+          novoJogo.push(numeroAleatorio);
+        } else {
+          i--;
+        }
+      }
+}
 
-    if(novoJogo.indexOf(numeroAleatorio) == -1) {
-      novoJogo.push(numeroAleatorio);
-    } else {
-      i--;
-    }
-  }
+function ordenaJogo() {
   novoJogoOrdenado = novoJogo.sort(function(a,b) {
     if(a > b) return 1;
     if(a < b) return -1;
     return 0;
   });
-  
+}
 
+function mostraJogoNaTela() {
   for(let i = 0; i < 6; i++) {
     numero[i].innerHTML = novoJogoOrdenado[i];
   }
 }
 
-function salvarJogo() {
+
+
+function salvarJogo()  {
   if(!jogosSalvos.includes(novoJogoOrdenado)) {
     jogosSalvos.push(novoJogoOrdenado);
-  } else {
-    console.log("gere um novo jogo para salvar")
-  }
-  mostraJogosSalvos();
+    const novoJogoString = novoJogoOrdenado.toString();
+    const jogoArrumado = novoJogoString.replaceAll(',',' - ');
+    console.log(jogoArrumado);
+    
+    const novoItem = document.createElement('li');
+    const divDeletaItem = document.createElement('div');
+    divDeletaItem.classList.add('deleta-jogo');
+    novoItem.appendChild(divDeletaItem);
+    const meusNumerosItem = document.createElement('p');
+    meusNumerosItem.classList.add('meus-jogos__numeros');
+    meusNumerosItem.innerHTML = jogoArrumado;
+    novoItem.appendChild(meusNumerosItem);
+    meusJogosLista.appendChild(novoItem);
+  } 
+}
+
+
+        
+
+
+
+// 
+// const botaoDeletaJogo = document.querySelectorAll('.deleta-jogo');
+// 
+
+// botaoDeletaJogo.addEventListener('click', deletaJogo);
+
+
+
+// function gerarNumeros() {
+//   
   
-}
 
-function deletaJogo() {
-  jogosSalvos.splice(jogosSalvos.indexOf(0), 1);
-  mostraJogosSalvos();
-}
+//   
+//   
+// }
 
-function mostraJogosSalvos() {
-  meusJogosLista.innerHTML = "";
-  for(let i = 0; i < jogosSalvos.length; i++) {
-    meusJogosLista.innerHTML += `${jogosSalvos[i]} <br>`;
-  }
-}
+// function salvarJogo() {
+//   
+//   criaElemento();
+  
+// }
+
+// function deletaJogo() {
+//   jogosSalvos.splice(jogosSalvos.indexOf(0), 1);
+//   criaElemento();
+// }
+
