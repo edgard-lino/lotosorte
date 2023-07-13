@@ -22,6 +22,7 @@ function sorteiaNumeros() {
     
         if(novoJogo.indexOf(numeroAleatorio) == -1) {
           novoJogo.push(numeroAleatorio);
+          novoJogo.id = jogosSalvos.length;
         } else {
           i--;
         }
@@ -42,8 +43,6 @@ function mostraJogoNaTela() {
   }
 }
 
-
-
 function salvarJogo()  {
   if(!jogosSalvos.includes(novoJogoOrdenado)) {
     jogosSalvos.push(novoJogoOrdenado);
@@ -52,46 +51,29 @@ function salvarJogo()  {
     console.log(jogoArrumado);
     
     const novoItem = document.createElement('li');
-    const divDeletaItem = document.createElement('div');
-    divDeletaItem.classList.add('deleta-jogo');
-    novoItem.appendChild(divDeletaItem);
     const meusNumerosItem = document.createElement('p');
     meusNumerosItem.classList.add('meus-jogos__numeros');
     meusNumerosItem.innerHTML = jogoArrumado;
+    
     novoItem.appendChild(meusNumerosItem);
+    novoItem.appendChild(botaoDeleta(novoJogo.id));
     meusJogosLista.appendChild(novoItem);
   } 
 }
 
+function botaoDeleta(id) {
+  const elementoBotao = document.createElement("button");
+  elementoBotao.innerText = "X";
 
-        
+  elementoBotao.addEventListener("click", function() {
+    deletaElemento(this.parentNode, id);
+  })
 
+  return elementoBotao;
+}
 
+function deletaElemento(tag, id) {
+  tag.remove();
 
-// 
-// const botaoDeletaJogo = document.querySelectorAll('.deleta-jogo');
-// 
-
-// botaoDeletaJogo.addEventListener('click', deletaJogo);
-
-
-
-// function gerarNumeros() {
-//   
-  
-
-//   
-//   
-// }
-
-// function salvarJogo() {
-//   
-//   criaElemento();
-  
-// }
-
-// function deletaJogo() {
-//   jogosSalvos.splice(jogosSalvos.indexOf(0), 1);
-//   criaElemento();
-// }
-
+  jogosSalvos.splice(jogosSalvos.findIndex(elemento.id === id), 1);
+}
