@@ -79,7 +79,7 @@ function criaElemento (jogoString, id) {
     
   elementoNovo.appendChild(elementoNumero);
   elementoNovo.appendChild(botaoDeleta(id));
-  elementoNovo.id = id;
+  
 
   meusJogosLista.appendChild(elementoNovo);
 }
@@ -87,11 +87,19 @@ function criaElemento (jogoString, id) {
 function botaoDeleta(id) {
   const elementoBotao = document.createElement("button");
   elementoBotao.innerText = "X";
+
   elementoBotao.id = id;
 
+  console.log("id do botao = " + id);
+  
+
   elementoBotao.addEventListener("click", function() {
-    deletaElemento(this.parentNode, id);
+    deletaElemento(this.parentNode, this.id);
+
+    console.log("id do this = " + this.id);
   })
+
+  
 
   return elementoBotao;
 }
@@ -99,7 +107,12 @@ function botaoDeleta(id) {
 function deletaElemento(tag, id) {
   tag.remove();
 
-  listaJogos.splice(listaJogos[id], 1);
+  listaJogos.forEach(
+    if(listaJogos.id === id) {
+      listaJogos.splice(listaJogos.id, 1);
+    }
+  )
+
 
   exibeJogosSalvos();
   localStorage.setItem("listaJogos", JSON.stringify(listaJogos));
