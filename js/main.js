@@ -1,6 +1,7 @@
 const botaoCriaNovoJogo = document.getElementById('cria-novo-jogo');
 const botaoSalvarJogo = document.getElementById('salvar-jogo');
 const numero = document.getElementsByClassName('numero');
+const meusJogosLista = document.querySelector('.meus-jogos__lista');
 
 let jogoAtual;
 let jogoAtualOrdenado;
@@ -8,11 +9,9 @@ let jogoAtualOrdenado;
 botaoCriaNovoJogo.addEventListener('click', criaNovoJogo);
 botaoSalvarJogo.addEventListener('click', salvarJogo);
 
-// const listaJogos = JSON.parse(localStorage.getItem("listaJogos")) || [];
+const listaJogos = JSON.parse(localStorage.getItem("listaJogos")) || [];
 
-const listaJogos = [];
-
-console.log(listaJogos);
+exibeJogosSalvos();
 
 function criaNovoJogo() {
   sorteiaJogo();
@@ -41,39 +40,73 @@ function ordenaJogo() {
       });
 }
 
-function salvarJogo() {
-  const itemAtual = {
-    "jogo": [],
-    "id": ""
-  }
-  itemAtual.jogo = jogoAtualOrdenado;
-  itemAtual.id = listaJogos.length;
-
-  listaJogos.forEach(elemento => {
-    if(elemento.jogo === itemAtual.jogo) {
-      console.log("é igual");
-    }
-  });
-
-  // if(!listaJogos.jogo.includes(itemAtual.jogo)) {
-  //   console.log("funciona");
-  //   // const itemLista = {
-  //   //   "jogo": [],
-  //   //   "id": ""
-  //   // };
-  //   // itemLista.jogo = jogoAtualOrdenado;
-  //   // itemLista.id = listaJogos.length;
-  //   // listaJogos.push(itemLista);
-
-  //   // localStorage.setItem("listaJogos", JSON.stringify(listaJogos))
-  // }
-}
-
 function exibeJogoAtual() {
   for(let i = 0; i < 6; i++) {
         numero[i].innerHTML = jogoAtualOrdenado[i];
       }
 }
+
+function salvarJogo() {
+  const existe = listaJogos.find(elemento => elemento.jogo === jogoAtualOrdenado)
+  
+  const itemAtual = {
+    "jogo": jogoAtualOrdenado,
+  }
+
+  if (!existe) {
+    itemAtual.id = listaJogos.length;
+    listaJogos.push(itemAtual);
+  }
+
+  localStorage.setItem("listaJogos", JSON.stringify(listaJogos));
+  exibeJogosSalvos();
+}
+
+function exibeJogosSalvos() {
+  meusJogosLista.innerHTML = "";
+  listaJogos.forEach(elemento => {
+    const jogoString = elemento.jogo.toString().replaceAll(',', ' - ');
+
+    console.log(jogoString);
+    criaElemento(jogoString, elemento.id);
+  });
+}
+
+function criaElemento (jogoString, id) {
+  const elementoNovo = document.createElement('li');
+  const elementoNumero = document.createElement('p');
+  elementoNumero.classList.add('meus-jogos__numeros');
+  elementoNumero.innerHTML = jogoString;
+    
+  elementoNovo.appendChild(elementoNumero);
+  elementoNovo.appendChild(botaoDeleta(id));
+  elementoNovo.id = id;
+
+  meusJogosLista.appendChild(elementoNovo);
+}
+
+function botaoDeleta(id) {
+  const elementoBotao = document.createElement("button");
+  elementoBotao.innerText = "X";
+  elementoBotao.id = id;
+
+  elementoBotao.addEventListener("click", function() {
+    deletaElemento(this.parentNode, id);
+  })
+
+  return elementoBotao;
+}
+
+function deletaElemento(tag, id) {
+  tag.remove();
+
+  listaJogos.splice(listaJogos[id], 1);
+
+  exibeJogosSalvos();
+  localStorage.setItem("listaJogos", JSON.stringify(listaJogos));
+}
+
+
 
 // AQUI DEU CERTO A PRIMEIRA VERSAO ABAIXO
 
