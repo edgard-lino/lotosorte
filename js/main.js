@@ -80,7 +80,6 @@ function criaElemento (jogoString, id) {
   elementoNovo.appendChild(elementoNumero);
   elementoNovo.appendChild(botaoDeleta(id));
   
-
   meusJogosLista.appendChild(elementoNovo);
 }
 
@@ -90,30 +89,22 @@ function botaoDeleta(id) {
 
   elementoBotao.id = id;
 
-  console.log("id do botao = " + id);
-  
-
   elementoBotao.addEventListener("click", function() {
     deletaElemento(this.parentNode, this.id);
-
-    console.log("id do this = " + this.id);
   })
-
-  
 
   return elementoBotao;
 }
 
 function deletaElemento(tag, id) {
   tag.remove();
-
-  listaJogos.forEach(
-    if(listaJogos.id === id) {
-      listaJogos.splice(listaJogos.id, 1);
+ 
+  listaJogos.forEach(elemento => {
+    if(elemento.id == id) {
+      listaJogos.splice(listaJogos.indexOf(elemento), 1);
+      
     }
-  )
+  })
 
-
-  exibeJogosSalvos();
-  localStorage.setItem("listaJogos", JSON.stringify(listaJogos));
+  localStorage.setItem("listaJogos", JSON.stringify(listaJogos)); 
 }
