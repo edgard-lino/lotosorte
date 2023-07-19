@@ -2,6 +2,13 @@ const botaoCriaNovoJogo = document.getElementById('cria-novo-jogo');
 const botaoSalvarJogo = document.getElementById('salvar-jogo');
 const numero = document.getElementsByClassName('numero');
 const meusJogosLista = document.querySelector('.meus-jogos__lista');
+const geradorNumeros = document.querySelector('.gerador__numeros');
+const select = document.getElementById('select');
+
+
+let quantidadeNumeros;
+        
+
 
 let jogoAtual;
 let jogoAtualOrdenado;
@@ -14,6 +21,11 @@ const listaJogos = JSON.parse(localStorage.getItem("listaJogos")) || [];
 exibeJogosSalvos();
 
 function criaNovoJogo() {
+  quantidadeNumeros = select.options[select.selectedIndex].value;
+  console.log(quantidadeNumeros);
+  
+  
+
   sorteiaJogo();
   ordenaJogo();
   exibeJogoAtual();
@@ -21,7 +33,7 @@ function criaNovoJogo() {
 
 function sorteiaJogo() {
   jogoAtual = [];
-  for(let i = 0; i < 6; i++) {
+  for(let i = 0; i < quantidadeNumeros; i++) {
     const numeroAleatorio = Math.floor(Math.random()*60 + 1);
 
     if(jogoAtual.indexOf(numeroAleatorio) == -1) {
@@ -41,9 +53,19 @@ function ordenaJogo() {
 }
 
 function exibeJogoAtual() {
-  for(let i = 0; i < 6; i++) {
-        numero[i].innerHTML = jogoAtualOrdenado[i];
-      }
+  const geradorNumerosLista = document.createElement('ul');
+  for(let i = 0; i < quantidadeNumeros; i++) {
+    const geradorNumerosItem = document.createElement('li');
+
+    const numeroAleatorioCor = Math.floor(Math.random()*46 + 1);
+
+    geradorNumerosItem.classList.add(`numero__${numeroAleatorioCor}`);
+    geradorNumerosItem.classList.add('numero');
+    geradorNumerosItem.innerHTML = jogoAtualOrdenado[i];
+    geradorNumerosLista.appendChild(geradorNumerosItem);
+  }
+  geradorNumeros.innerHTML = "";
+  geradorNumeros.appendChild(geradorNumerosLista);
 }
 
 function salvarJogo() {

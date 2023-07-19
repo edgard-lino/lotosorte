@@ -16,6 +16,47 @@
   --preto-sombra: rgba(0, 0, 0, 0.467);
 
   --fonte-principal: 'Geologica', sans-serif;
+
+  --color-1: #e45d99;
+  --color-2: #949ac7;
+  --color-3: #1a88cd;
+  --color-4: #87fbc6;
+  --color-5: #6ca0c9;
+  --color-6: #8b0930;
+  --color-7: #986570;
+  --color-8: #fa5995;
+  --color-9: #d9fe29;
+  --color-10: #9d1d47;
+  --color-11: #fb1b21;
+  --color-12: #71df97;
+  --color-13: #ce6e6a;
+  --color-14: #51ff00;
+  --color-15: #050491;
+  --color-16: #328e37;
+  --color-17: #cc488c;
+  --color-18: #066f5d;
+  --color-19: #4e0598;
+  --color-20: #2937ea;
+  --color-21: #f2d3fd;
+  --color-22: #9efa41;
+  --color-23: #19c0be;
+  --color-24: #23aa4b;
+  --color-25: #bd7f38;
+  --color-26: #957d4d;
+  --color-27: #903ffc;
+  --color-28: #b4f024;
+  --color-29: #b4fed2;
+  --color-30: #b6a1d7;
+  --color-31: #aaf0ed;
+  --color-32: #31bdf5;
+  --color-33: #7e8caf;
+  --color-34: #cab6e8;
+  --color-35: #46730a;
+  --color-36: #52eafa;
+  --color-37: #30c525;
+  --color-38: #60cf6a;
+  --color-39: #4f715e;
+  --color-40: #cb8a5d;
 }
 
 @media screen and (min-width: 1400px) {

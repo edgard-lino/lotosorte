@@ -39,36 +39,193 @@
 
 .gerador__numeros ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  max-width: 280px;
+  justify-content:space-around;
 }
 
-.numero__01 {
+.numero__1 {
   border: 17px solid var(--marrom);
 }
 
-.numero__02 {
+.numero__2 {
   border: 17px solid var(--magenta);
 }
 
-.numero__03 {
+.numero__3 {
   border: 17px solid var(--rosa);
 }
 
-.numero__04 {
+.numero__4 {
   border: 17px solid var(--azul);
 }
 
-.numero__05 {
+.numero__5 {
   border: 17px solid var(--verde);
 }
 
-.numero__06 {
+.numero__6 {
   border: 17px solid var(--vermelho);
+}
+
+.numero__7 {
+  border: 17px solid var(--color-1);
+}
+
+.numero__8 {
+  border: 17px solid var(--color-2);
+}
+
+.numero__9 {
+  border: 17px solid var(--color-3);
+}
+
+.numero__10 {
+  border: 17px solid var(--color-4);
+}
+
+.numero__11 {
+  border: 17px solid var(--color-5);
+}
+
+.numero__12 {
+  border: 17px solid var(--color-6);
+}
+
+.numero__13 {
+  border: 17px solid var(--color-7);
+}
+
+.numero__14 {
+  border: 17px solid var(--color-8);
+}
+
+.numero__15 {
+  border: 17px solid var(--color-9);
+}
+
+.numero__16 {
+  border: 17px solid var(--color-10);
+}
+
+.numero__17 {
+  border: 17px solid var(--color-11);
+}
+
+.numero__18 {
+  border: 17px solid var(--color-12);
+}
+
+.numero__19 {
+  border: 17px solid var(--color-13);
+}
+
+.numero__20 {
+  border: 17px solid var(--color-14);
+}
+
+.numero__21 {
+  border: 17px solid var(--color-15);
+}
+
+.numero__22 {
+  border: 17px solid var(--color-16);
+}
+
+.numero__23 {
+  border: 17px solid var(--color-17);
+}
+
+.numero__24 {
+  border: 17px solid var(--color-18);
+}
+
+.numero__25 {
+  border: 17px solid var(--color-19);
+}
+
+.numero__26 {
+  border: 17px solid var(--color-20);
+}
+
+.numero__27 {
+  border: 17px solid var(--color-21);
+}
+
+.numero__28 {
+  border: 17px solid var(--color-22);
+}
+
+.numero__29 {
+  border: 17px solid var(--color-23);
+}
+
+.numero__30 {
+  border: 17px solid var(--color-24);
+}
+
+.numero__31 {
+  border: 17px solid var(--color-25);
+}
+
+.numero__32 {
+  border: 17px solid var(--color-26);
+}
+
+.numero__33 {
+  border: 17px solid var(--color-27);
+}
+
+.numero__34 {
+  border: 17px solid var(--color-28);
+}
+
+.numero__35 {
+  border: 17px solid var(--color-29);
+}
+
+.numero__36 {
+  border: 17px solid var(--color-30);
+}
+
+.numero__37 {
+  border: 17px solid var(--color-31);
+}
+
+.numero__38 {
+  border: 17px solid var(--color-32);
+}
+
+.numero__39 {
+  border: 17px solid var(--color-33);
+}
+
+.numero__40 {
+  border: 17px solid var(--color-34);
+}
+
+.numero__41 {
+  border: 17px solid var(--color-35);
+}
+
+.numero__42 {
+  border: 17px solid var(--color-36);
+}
+
+.numero__43 {
+  border: 17px solid var(--color-37);
+}
+
+.numero__44 {
+  border: 17px solid var(--color-38);
+}
+
+.numero__45 {
+  border: 17px solid var(--color-39);
+}
+
+.numero__46 {
+  border: 17px solid var(--color-40);
 }
 
 .numero {
@@ -200,7 +357,7 @@
   .gerador__numeros ul {
     max-width: 700px;
     width: 700px;
-    justify-content: space-between;
+    
   }
 
   .botao__selecionar {
