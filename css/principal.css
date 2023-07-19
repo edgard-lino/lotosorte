@@ -42,6 +42,8 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content:space-around;
+  max-width: 80%;
+  margin: auto;
 }
 
 .numero__1 {
@@ -246,7 +248,7 @@
 .botao {
   font-family: var(--fonte-principal);
   font-weight: 500;
-  width: 200px;
+  width: 300px;
   font-size: 1.2rem;
   padding: 0.7rem;
   border-radius: 4rem;
@@ -300,6 +302,15 @@
 
 .meus-jogos {
   grid-area: 8 / 1 / 9 / 2;
+}
+
+.meus-jogos ul {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.meus-jogos li {
+  line-height: 2rem;
 }
 
 .deleta-jogo {
@@ -401,6 +412,10 @@
     transform: scale(1.1);
     box-shadow: 5px 5px 5px var(--preto-sombra);
   }
+
+  
+
+
 
   .botao__salvar-jogo:active {
     background-color: var(--azul);
