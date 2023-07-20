@@ -5,11 +5,8 @@ const meusJogosLista = document.querySelector('.meus-jogos__lista');
 const geradorNumeros = document.querySelector('.gerador__numeros');
 const select = document.getElementById('select');
 
-
 let quantidadeNumeros;
         
-
-
 let jogoAtual;
 let jogoAtualOrdenado;
 
@@ -21,11 +18,8 @@ const listaJogos = JSON.parse(localStorage.getItem("listaJogos")) || [];
 exibeJogosSalvos();
 
 function criaNovoJogo() {
+  botaoSalvarJogo.classList.add("vermelho");
   quantidadeNumeros = select.options[select.selectedIndex].value;
-  console.log(quantidadeNumeros);
-  
-  
-
   sorteiaJogo();
   ordenaJogo();
   exibeJogoAtual();
@@ -76,6 +70,8 @@ function salvarJogo() {
   }
 
   if (!existe) {
+    botaoSalvarJogo.classList.remove("vermelho");
+    
     itemAtual.id = listaJogos[listaJogos.length -1] ? (listaJogos[listaJogos.length-1]).id + 1 : 0;
     listaJogos.push(itemAtual);
   }
@@ -86,10 +82,10 @@ function salvarJogo() {
 
 function exibeJogosSalvos() {
   meusJogosLista.innerHTML = "";
-  listaJogos.forEach(elemento => {
-    const jogoString = elemento.jogo.toString().replaceAll(',', ' - ');
-
-    criaElemento(jogoString, elemento.id);
+  listaJogos.forEach(function(elemento) {
+    const elementoJogo = elemento.jogo;
+    const elementoTexto = elementoJogo.toString().replaceAll(",", " - ");
+    criaElemento(elementoTexto, elemento.id);
   });
 }
 

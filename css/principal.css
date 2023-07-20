@@ -281,11 +281,17 @@
 .botao__salvar-jogo {
   grid-area: 6 / 1 / 7 / 2;
   justify-self: center;
+  color: var(--cinza);
+  background-color: var(--branco);
+  border: 2px solid var(--cinza);
+  margin-bottom: 2rem;
+  transition: 0.5s;
+}
+
+.vermelho {
   color: var(--branco);
   background-color: var(--vermelho);
   border: 2px solid var(--vermelho);
-  margin-bottom: 2rem;
-  transition: 0.5s;
 }
 
 .botao__gerar-numeros:active, .botao__salvar-jogo:active {
@@ -374,7 +380,6 @@
   .gerador__numeros ul {
     max-width: 700px;
     width: 700px;
-    
   }
 
   .botao__selecionar {
@@ -391,14 +396,8 @@
   }
 
   .botao__gerar-numeros:hover {
-    background-color: var(--verde-escuro);
-    border-color: var(--verde-escuro);
-    transform: scale(1.1);
-    box-shadow: 5px 5px 5px var(--preto-sombra);
     cursor: pointer;
   }
-
-
 
   .gerador__numeros {
     grid-area: 3 / 1 / 4 / 3;
@@ -410,16 +409,8 @@
   }
 
   .botao__salvar-jogo:hover {
-    background-color: var(--vermelho);
-    color: var(--branco);
-    cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 5px 5px 5px var(--preto-sombra);
+    cursor: pointer;    
   }
-
-  
-
-
 
   .botao__salvar-jogo:active {
     background-color: var(--azul);
